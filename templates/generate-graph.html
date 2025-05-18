@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loan Data Charts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      
+      margin: 0;
+      padding: 70px;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      color: #000;
+      text-decoration:underline;
+    }
+
+    .graph {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 charts per row */
+      gap: 10px;
+      justify-items: center;
+      align-items: start;
+    }
+
+    .chart-box {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      /* max-width: 90%; */
+      width: 500px;
+      color: #000;
+    }
+
+    .chart-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Loan Data Insights</h1>
+
+  <div class="graph">
+    <div class="chart-box">
+      <h2>1. Loan Approval Status</h2>
+      <img src="{{ url_for('static', filename='images/loan_status_chart.png') }}" alt="Loan Status">
+    </div>
+
+    <div class="chart-box">
+      <h2>2. Loan Status by Gender</h2>
+      <img src="{{ url_for('static', filename='images/gender_chart.png') }}" alt="Gender Chart">
+    </div>
+
+    <div class="chart-box">
+      <h2>3. Loan Status by Employment</h2>
+      <img src="{{ url_for('static', filename='images/employment_chart.png') }}" alt="Employment Chart">
+    </div>
+
+    <div class="chart-box">
+      <h2>4. Property Area vs Loan Status</h2>
+      <img src="{{ url_for('static', filename='images/property_area_chart.png') }}" alt="Property Chart">
+    </div>
+
+    <div class="chart-box">
+      <h2>5. Applicant Income vs Loan Amount</h2>
+      <img src="{{ url_for('static', filename='images/income_scatter.png') }}" alt="Scatter Plot">
+    </div>
+  </div>
+</body>
+</html>
